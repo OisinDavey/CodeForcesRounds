@@ -19,17 +19,32 @@ int dy4[4] = {+1, -1, 0, 0};
 
 using namespace std;
 
+int negmod(int a, int b){
+    return (b + (a%b)) % b;
+}
+
 int main(){
     int t;
     cin >> t;
     while(t--){
-        int a,b;
-        cin >> a >> b;
-        if(a==1 || b==1)
-            cout << "YES\n";
-        else if(a==2 && b==2)
+        int n;
+        cin >> n;
+        int a[n];
+        bool mods[n];
+        memset(mods, 0, sizeof(mods));
+        for(int i=0;i<n;++i){
+            cin >> a[i];
+            mods[negmod((i+a[i]), n)] = 1;
+        }bool B = 1;
+        for(int i=0;i<n;++i){
+            if(!mods[i]){
+                B = 0;
+            }
+        }
+        if(B)
             cout << "YES\n";
         else
             cout << "NO\n";
     }
 }
+
