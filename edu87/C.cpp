@@ -74,6 +74,7 @@ double solve(double n, double a){
 }
 
 int main(){
+    FastIO;
     int t;
     cin >> t;
     while(t--){
