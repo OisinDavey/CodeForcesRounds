@@ -4,7 +4,7 @@
 
 #include                <bits/stdc++.h>
 #define MX_N            5001
-#define INF             100000000
+#define mp              make_pair
 #define mod7            1000000007
 #define modpi           314159
 #define PI              3.141592653589793238
@@ -31,19 +31,18 @@ ll lcm(ull a, ull b){
     return a*(b/gcd(a,b));
 }
 
+const long long INF = 1e18;
+
 using namespace std;
 
 int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n;
-        cin >> n;
-        int a[n];
-        int result[n];
-        for(int i=0;i<n;++i) cin >> a[i];
-        sort(a, a+n);
-        adjacent_difference(a, a+n, result);
-        cout << *min_element(result+1, result+n) << endl;
+    int a, b, c, d, e;
+    int sum = 0;
+    cin >> a >> b >> c >> d >> e;
+    sum = a + b + c + d + e;
+    if(sum % 5 == 0 && sum != 0){
+        cout << sum/5 << endl;
+    }else{
+        cout << "-1\n";
     }
 }

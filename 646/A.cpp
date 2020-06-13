@@ -34,7 +34,14 @@ ll lcm(ull a, ull b){
 using namespace std;
 
 int main(){
-    int a, b, c;
-    cin >> a >> b >> c;
-    cout << a * b * c << endl;
+    FastIO;
+    int t;
+    cin >> t;
+    int x, y;
+    while(t--){
+        cin >> x >> y;
+        if(y > x)
+            swap(x, y);
+        cout << ((x > 2*y)?x*x:4*y*y) << endl;
+    }
 }

@@ -4,7 +4,7 @@
 
 #include                <bits/stdc++.h>
 #define MX_N            5001
-#define INF             100000000
+#define mp              make_pair
 #define mod7            1000000007
 #define modpi           314159
 #define PI              3.141592653589793238
@@ -31,19 +31,21 @@ ll lcm(ull a, ull b){
     return a*(b/gcd(a,b));
 }
 
+const long long INF = 1e18;
+
 using namespace std;
 
+ll SmallTrinum(ll x){
+    return x * (x-1LL) / 2LL;
+}
+
 int main(){
-    int t;
-    cin >> t;
-    while(t--){
-        int n;
-        cin >> n;
-        int a[n];
-        int result[n];
-        for(int i=0;i<n;++i) cin >> a[i];
-        sort(a, a+n);
-        adjacent_difference(a, a+n, result);
-        cout << *min_element(result+1, result+n) << endl;
-    }
+    ll n, m;
+    cin >> n >> m;
+    ll type_2 = n%m;
+    ll type_1 = m - type_2;
+    ll per_group = n/m;
+    ll minimum = type_1 * SmallTrinum(per_group) + type_2 * SmallTrinum(per_group + 1);
+    ll maximum = SmallTrinum(n - (m - 1));
+    cout << minimum << ' ' << maximum << endl;
 }
