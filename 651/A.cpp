@@ -4,7 +4,7 @@
 
 #include                <bits/stdc++.h>
 #define MX_N            5001
-#define INF             100000000
+#define mp              make_pair
 #define mod7            1000000007
 #define modpi           314159
 #define PI              3.141592653589793238
@@ -31,17 +31,16 @@ ll lcm(ull a, ull b){
     return a*(b/gcd(a,b));
 }
 
+const long long INF = 1e18;
+
 using namespace std;
 
 int main(){
-    FastIO;
-    int t;
-    cin >> t;
-    int x, y;
-    while(t--){
-        cin >> x >> y;
-        if(y > x)
-            swap(x, y);
-        cout << ((x > 2*y)?x*x:4*y*y) << endl;
+    int T;
+    cin >> T;
+    while(T--){
+        int n;
+        cin >> n;
+        cout << n/2 << endl;
     }
 }
